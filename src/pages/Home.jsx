@@ -38,6 +38,7 @@ const Home = () => {
           <pointLight />
           <hemisphereLight />
           <Sky/>
+          <Plane/>
         </Suspense>
       </Canvas>
 
