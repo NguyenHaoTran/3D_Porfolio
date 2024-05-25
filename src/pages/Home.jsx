@@ -1,10 +1,7 @@
-{/* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        Popup
-      </div> */}
+
 import { Suspense, useEffect } from 'react';      
 import { Canvas } from '@react-three/fiber';
 import Loader from '../Components/Loader';
-import Donutcafe from '../models/Donut_coffe';
 import Sky from '../models/Sky';
 import Plane from '../models/Plane';
 import windsound from '../assets/audio/WindSound.mp3';
@@ -15,11 +12,9 @@ import soundon from '../assets/icons/soundon.png';
 
 const Home = () => {
   const audioRef = useRef(new Audio(windsound));
-  audioRef.current.volume = 0.2;
+  audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
-  const [isRotating, setIsRotating] = useState(false);
-  const [currentStage, setCurrentStage] = useState(1);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
 
   useEffect(() => {
     if(isPlayingMusic) {
@@ -30,22 +25,6 @@ const Home = () => {
       audioRef.current.pause();
     }
   }, [isPlayingMusic])
-
-  const adjustDonutCafeForScreenSize = () =>{
-    let screenScale = null;
-    let screenPosition = [0, -6.5, -43];
-    let rotation = [0.1, 4.7, 0];
-
-    if (window.innerWidth < 768) {
-      screenScale = [10, 10, 10];
-    }else {
-      screenScale = [20, 20, 20];
-    }
-
-    return [screenScale, screenPosition, rotation]
-  }
-
-  const [donutCafeScale, donutPosition, donutRotation] = adjustDonutCafeForScreenSize();
 
   return (
     <section className="w-full h-screen realtive bg-sky-200">
@@ -59,11 +38,6 @@ const Home = () => {
           <pointLight />
           <hemisphereLight />
           <Sky/>
-          <Donutcafe
-            positon={donutPosition}
-            scale={donutCafeScale}
-            rotation={donutRotation}
-          />
         </Suspense>
       </Canvas>
 
