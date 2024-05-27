@@ -29,7 +29,7 @@ const Home = () => {
     <section className="w-full h-screen realtive bg-sky-200">
       <HomeContent />
       <Canvas
-        className="w-full h-screen relative"
+        className="w-full h-screen fixed"
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
 function Cards() {
   return (
-    <div>Cards</div>
-  )
+    <div className="pt-20">
+      <Card />
+      <Card />
+    </div>
+  );
 }
 
-export default Cards
+export default Cards;
