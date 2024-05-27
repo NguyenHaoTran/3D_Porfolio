@@ -27,7 +27,6 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen realtive bg-sky-200">
-      <HomeContent />
       <Canvas
         className="w-full h-screen fixed"
         camera={{ near: 0.1, far: 1000 }}
@@ -41,7 +40,7 @@ const Home = () => {
           <Plane />
         </Suspense>
       </Canvas>
-
+      <HomeContent />
       <div className="absolute bottom-2 left-2">
         <img
           src={!isPlayingMusic ? soundoff : soundon}

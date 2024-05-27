@@ -10,7 +10,7 @@ function HomeContent() {
       <h1 className="text-3xl">
         Hi, I'm <span className="font-semibold">Nguyên Hào Trần</span>
       </h1>
-      <p>Frontend-dev in HCM city VietNam</p>
+      <p className="pt-8">Frontend-dev in HCM city VietNam</p>
       <Cards />
     </div>
   );
